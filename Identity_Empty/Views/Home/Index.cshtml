@@ -1,0 +1,27 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Index</title>
+</head>
+<body>
+    <h1>@User.Identity.Name</h1> 
+    <h1>This is mIN Page</h1>
+    @if (User.Identity.IsAuthenticated)
+    {
+        <p>@User.Identity.Name</p>
+
+        <form method="post" asp-controller="Home" asp-action="LogOff">
+            <input type="submit" value="Выход" />
+        </form>
+    }
+    <a href="Home/Register">Register</a>
+
+</body>
+</html>
